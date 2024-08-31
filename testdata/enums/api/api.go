@@ -1,6 +1,6 @@
 package api
 
-import "github.com/swaggo/swag/testdata/enums/types"
+import "github.com/xu/swag/testdata/enums/types"
 
 //	 post students
 //
@@ -9,7 +9,7 @@ import "github.com/swaggo/swag/testdata/enums/types"
 //		@Failure      400   {object}  types.Person  "ok"
 //		@Router       /students [post]
 func API() {
-	_ = types.Person{}
+    _ = types.Person{}
 }
 
 //	 get students
@@ -22,7 +22,7 @@ func API() {
 //		@Success      200   "ok"
 //		@Router       /students/{typeinpath}/ [get]
 func API2() {
-	_ = types.Person{}
+    _ = types.Person{}
 }
 
 //	 post students
@@ -33,7 +33,7 @@ func API2() {
 //		@Success      200   "ok"
 //		@Router       /students2 [get]
 func API3() {
-	_ = types.Person{}
+    _ = types.Person{}
 }
 
 //	 post students
@@ -44,5 +44,5 @@ func API3() {
 //		@Success      200   "ok"
 //		@Router       /students4 [get]
 func API4() {
-	_ = types.Person{}
+    _ = types.Person{}
 }

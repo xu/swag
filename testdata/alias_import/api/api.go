@@ -1,11 +1,11 @@
 package api
 
 import (
-	"log"
-	"net/http"
+    "log"
+    "net/http"
 
-	"github.com/swaggo/swag/testdata/alias_import/data"
-	"github.com/swaggo/swag/testdata/alias_type/types"
+    "github.com/xu/swag/testdata/alias_import/data"
+    "github.com/xu/swag/testdata/alias_type/types"
 )
 
 // @Summary Get application
@@ -16,14 +16,14 @@ import (
 // @Success 200 {object} data.ApplicationResponse	"ok"
 // @Router /testapi/application [get]
 func GetApplication(w http.ResponseWriter, r *http.Request) {
-	var foo = data.ApplicationResponse{
-		Application: types.Application{
-			Name: "name",
-		},
-		ApplicationArray: []types.Application{
-			{Name: "name"},
-		},
-	}
-	log.Println(foo)
-	//write your code
+    var foo = data.ApplicationResponse{
+        Application: types.Application{
+            Name: "name",
+        },
+        ApplicationArray: []types.Application{
+            {Name: "name"},
+        },
+    }
+    log.Println(foo)
+    // write your code
 }

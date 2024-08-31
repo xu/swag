@@ -10,9 +10,9 @@ void Hello(){
 import "C"
 
 import (
-	"net/http"
+    "net/http"
 
-	"github.com/swaggo/swag/testdata/simple_cgo/api"
+    "github.com/xu/swag/testdata/simple_cgo/api"
 )
 
 // @title Swagger Example API
@@ -57,8 +57,8 @@ import (
 // @authorizationurl https://example.com/oauth/authorize
 // @scope.admin Grants read and write access to administrative information
 func main() {
-	C.Hello()
+    C.Hello()
 
-	http.HandleFunc("/testapi/get-string-by-int/", api.GetStringByInt)
-	http.ListenAndServe(":8080", nil)
+    http.HandleFunc("/testapi/get-string-by-int/", api.GetStringByInt)
+    http.ListenAndServe(":8080", nil)
 }

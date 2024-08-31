@@ -1,10 +1,10 @@
 package composition
 
 import (
-	"net/http"
+    "net/http"
 
-	"github.com/swaggo/swag/testdata/duplicated_function_scoped/api"
-	otherapi "github.com/swaggo/swag/testdata/duplicated_function_scoped/other_api"
+    "github.com/xu/swag/testdata/duplicated_function_scoped/api"
+    otherapi "github.com/xu/swag/testdata/duplicated_function_scoped/other_api"
 )
 
 // @title Swagger Example API
@@ -16,7 +16,7 @@ import (
 // @BasePath /v2
 
 func main() {
-	http.HandleFunc("/testapi/get-foo", api.GetFoo)
-	http.HandleFunc("/testapi/post-bar", otherapi.GetFoo)
-	http.ListenAndServe(":8080", nil)
+    http.HandleFunc("/testapi/get-foo", api.GetFoo)
+    http.HandleFunc("/testapi/post-bar", otherapi.GetFoo)
+    http.ListenAndServe(":8080", nil)
 }

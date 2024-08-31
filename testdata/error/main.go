@@ -1,9 +1,9 @@
 package main
 
 import (
-	"net/http"
+    "net/http"
 
-	"github.com/swaggo/swag/testdata/error/api"
+    "github.com/xu/swag/testdata/error/api"
 )
 
 // @title Swagger Example API
@@ -22,6 +22,6 @@ import (
 // @BasePath /v2
 
 func main() {
-	http.HandleFunc("/testapi/upload", api.Upload)
-	http.ListenAndServe(":8080", nil)
+    http.HandleFunc("/testapi/upload", api.Upload)
+    http.ListenAndServe(":8080", nil)
 }

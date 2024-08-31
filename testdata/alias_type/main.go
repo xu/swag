@@ -1,9 +1,9 @@
 package alias_type
 
 import (
-	"net/http"
+    "net/http"
 
-	"github.com/swaggo/swag/testdata/alias_type/api"
+    "github.com/xu/swag/testdata/alias_type/api"
 )
 
 // @title Swagger Example API
@@ -21,6 +21,6 @@ import (
 // @host petstore.swagger.io
 // @BasePath /v2
 func main() {
-	http.HandleFunc("/testapi/time-as-time-container", api.GetTimeAsTimeContainer)
-	http.ListenAndServe(":8080", nil)
+    http.HandleFunc("/testapi/time-as-time-container", api.GetTimeAsTimeContainer)
+    http.ListenAndServe(":8080", nil)
 }

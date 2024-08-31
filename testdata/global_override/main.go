@@ -1,9 +1,9 @@
 package global_override
 
 import (
-	"net/http"
+    "net/http"
 
-	"github.com/swaggo/swag/testdata/global_override/api"
+    "github.com/xu/swag/testdata/global_override/api"
 )
 
 // @title Swagger Example API
@@ -21,6 +21,6 @@ import (
 // @host petstore.swagger.io
 // @BasePath /v2
 func main() {
-	http.HandleFunc("/testapi/application", api.GetApplication)
-	http.ListenAndServe(":8080", nil)
+    http.HandleFunc("/testapi/application", api.GetApplication)
+    http.ListenAndServe(":8080", nil)
 }

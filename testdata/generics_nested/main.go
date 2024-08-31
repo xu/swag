@@ -1,9 +1,9 @@
 package main
 
 import (
-	"net/http"
+    "net/http"
 
-	"github.com/swaggo/swag/testdata/generics_nested/api"
+    "github.com/xu/swag/testdata/generics_nested/api"
 )
 
 // @title Swagger Example API
@@ -12,6 +12,6 @@ import (
 // @host localhost:4000
 // @basePath /api
 func main() {
-	http.HandleFunc("/posts/", api.GetPosts)
-	http.ListenAndServe(":8080", nil)
+    http.HandleFunc("/posts/", api.GetPosts)
+    http.ListenAndServe(":8080", nil)
 }

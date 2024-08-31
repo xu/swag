@@ -1,14 +1,14 @@
 package main
 
 import (
-	"github.com/swaggo/swag"
-	"github.com/swaggo/swag/testdata/delims/api"
-	_ "github.com/swaggo/swag/testdata/delims/docs"
+    "github.com/xu/swag"
+    "github.com/xu/swag/testdata/delims/api"
+    _ "github.com/xu/swag/testdata/delims/docs"
 )
 
 func ReadDoc() string {
-	doc, _ := swag.ReadDoc("CustomDelims")
-	return doc
+    doc, _ := swag.ReadDoc("CustomDelims")
+    return doc
 }
 
 // @title Swagger Example API
@@ -17,5 +17,5 @@ func ReadDoc() string {
 // @termsOfService http://swagger.io/terms/
 
 func main() {
-	api.MyFunc()
+    api.MyFunc()
 }

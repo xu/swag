@@ -1,10 +1,10 @@
 package api
 
 import (
-	"encoding/json"
-	"net/http"
+    "encoding/json"
+    "net/http"
 
-	"github.com/swaggo/swag/example/basic/web"
+    "github.com/xu/swag/example/basic/web"
 )
 
 // GetStringByInt example
@@ -21,13 +21,13 @@ import (
 //	@Failure		404		{object}	web.APIError	"Can not find ID"
 //	@Router			/testapi/get-string-by-int/{some_id} [get]
 func GetStringByInt(w http.ResponseWriter, r *http.Request) {
-	var pet web.Pet
-	if err := json.NewDecoder(r.Body).Decode(&pet); err != nil {
-		// write your code
-		return
-	}
+    var pet web.Pet
+    if err := json.NewDecoder(r.Body).Decode(&pet); err != nil {
+        // write your code
+        return
+    }
 
-	// write your code
+    // write your code
 }
 
 // GetStructArrayByString example
@@ -44,7 +44,7 @@ func GetStringByInt(w http.ResponseWriter, r *http.Request) {
 //	@Failure		404		{object}	web.APIError	"Can not find ID"
 //	@Router			/testapi/get-struct-array-by-string/{some_id} [get]
 func GetStructArrayByString(w http.ResponseWriter, r *http.Request) {
-	// write your code
+    // write your code
 }
 
 // Upload example
@@ -60,7 +60,7 @@ func GetStructArrayByString(w http.ResponseWriter, r *http.Request) {
 //	@Failure		404		{object}	web.APIError	"Can not find ID"
 //	@Router			/file/upload [post]
 func Upload(w http.ResponseWriter, r *http.Request) {
-	// write your code
+    // write your code
 }
 
 // AnonymousField example
@@ -73,5 +73,5 @@ func AnonymousField() {
 
 // Pet3 example
 type Pet3 struct {
-	ID int `json:"id"`
+    ID int `json:"id"`
 }

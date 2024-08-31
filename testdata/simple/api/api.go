@@ -1,10 +1,10 @@
 package api
 
 import (
-	"net/http"
+    "net/http"
 
-	. "github.com/swaggo/swag/testdata/simple/cross"
-	_ "github.com/swaggo/swag/testdata/simple/web"
+    . "github.com/xu/swag/testdata/simple/cross"
+    _ "github.com/xu/swag/testdata/simple/web"
 )
 
 // @Summary Add a new pet to the store
@@ -19,8 +19,8 @@ import (
 // @Failure 404 {object} web.APIError "Can not find ID"
 // @Router /testapi/get-string-by-int/{some_id} [get]
 func GetStringByInt(w http.ResponseWriter, r *http.Request) {
-	_ = Cross{}
-	//write your code
+    _ = Cross{}
+    // write your code
 }
 
 // @Description get struct array by ID
@@ -44,7 +44,7 @@ func GetStringByInt(w http.ResponseWriter, r *http.Request) {
 // @Security OAuth2Implicit[read, write] || Firebase
 // @Router /testapi/get-struct-array-by-string/{some_id} [get]
 func GetStructArrayByString(w http.ResponseWriter, r *http.Request) {
-	//write your code
+    // write your code
 }
 
 // @Summary Upload file
@@ -60,7 +60,7 @@ func GetStructArrayByString(w http.ResponseWriter, r *http.Request) {
 // @Failure 403 {object} Cross "cross"
 // @Router /file/upload [post]
 func Upload(w http.ResponseWriter, r *http.Request) {
-	//write your code
+    // write your code
 }
 
 // @Summary use Anonymous field
@@ -102,7 +102,7 @@ func AnonymousStructArray() {
 }
 
 type Pet3 struct {
-	ID int `json:"id"`
+    ID int `json:"id"`
 }
 
 // @Success 200 {object} web.Pet5a "ok"
@@ -134,24 +134,24 @@ func GetPet6MapString() {
 // @Success 200 {object}  api.GetPet6FunctionScopedResponse.response "ok"
 // @Router /GetPet6FunctionScopedResponse [get]
 func GetPet6FunctionScopedResponse() {
-	type response struct {
-		Name string
-	}
+    type response struct {
+        Name string
+    }
 }
 
 // @Success 200 {object}  api.GetPet6FunctionScopedComplexResponse.response "ok"
 // @Router /GetPet6FunctionScopedComplexResponse [get]
 func GetPet6FunctionScopedComplexResponse() {
-	type pet struct {
-		Name string
-	}
+    type pet struct {
+        Name string
+    }
 
-	type pointerPet struct {
-		Name string
-	}
+    type pointerPet struct {
+        Name string
+    }
 
-	type response struct {
-		Pets       []pet
-		PointerPet *pointerPet
-	}
+    type response struct {
+        Pets       []pet
+        PointerPet *pointerPet
+    }
 }

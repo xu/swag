@@ -1,13 +1,13 @@
 package controller
 
 import (
-	"errors"
-	"fmt"
-	"net/http"
+    "errors"
+    "fmt"
+    "net/http"
 
-	"github.com/gin-gonic/gin"
-	"github.com/swaggo/swag/example/celler/httputil"
-	"github.com/swaggo/swag/example/celler/model"
+    "github.com/gin-gonic/gin"
+    "github.com/xu/swag/example/celler/httputil"
+    "github.com/xu/swag/example/celler/model"
 )
 
 // Auth godoc
@@ -25,18 +25,18 @@ import (
 //	@Security		ApiKeyAuth
 //	@Router			/admin/auth [post]
 func (c *Controller) Auth(ctx *gin.Context) {
-	authHeader := ctx.GetHeader("Authorization")
-	if len(authHeader) == 0 {
-		httputil.NewError(ctx, http.StatusBadRequest, errors.New("please set Header Authorization"))
-		return
-	}
-	if authHeader != "admin" {
-		httputil.NewError(ctx, http.StatusUnauthorized, fmt.Errorf("this user isn't authorized to operation key=%s expected=admin", authHeader))
-		return
-	}
-	admin := model.Admin{
-		ID:   1,
-		Name: "admin",
-	}
-	ctx.JSON(http.StatusOK, admin)
+    authHeader := ctx.GetHeader("Authorization")
+    if len(authHeader) == 0 {
+        httputil.NewError(ctx, http.StatusBadRequest, errors.New("please set Header Authorization"))
+        return
+    }
+    if authHeader != "admin" {
+        httputil.NewError(ctx, http.StatusUnauthorized, fmt.Errorf("this user isn't authorized to operation key=%s expected=admin", authHeader))
+        return
+    }
+    admin := model.Admin{
+        ID:   1,
+        Name: "admin",
+    }
+    ctx.JSON(http.StatusOK, admin)
 }

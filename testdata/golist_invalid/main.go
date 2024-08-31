@@ -1,10 +1,10 @@
 package main
 
 import (
-	"net/http"
+    "net/http"
 
-	"github.com/swaggo/swag/example/basic/api"
-	"github.com/swaggo/swag/testdata/invalid_external_pkg/invalid"
+    "github.com/xu/swag/example/basic/api"
+    "github.com/xu/swag/testdata/invalid_external_pkg/invalid"
 )
 
 // @title Swagger Example API
@@ -26,7 +26,7 @@ import (
 // @host petstore.swagger.io
 // @BasePath /v2
 func main() {
-	invalid.Foo()
-	http.HandleFunc("/testapi/upload", api.Upload)
-	http.ListenAndServe(":8080", nil)
+    invalid.Foo()
+    http.HandleFunc("/testapi/upload", api.Upload)
+    http.ListenAndServe(":8080", nil)
 }

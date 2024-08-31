@@ -1,10 +1,10 @@
 package api
 
 import (
-	"net/http"
+    "net/http"
 
-	. "github.com/swaggo/swag/testdata/error/errors"
-	_ "github.com/swaggo/swag/testdata/error/web"
+    . "github.com/xu/swag/testdata/error/errors"
+    _ "github.com/xu/swag/testdata/error/web"
 )
 
 // Upload do something
@@ -18,6 +18,6 @@ import (
 // @Failure 400 {object} web.CrossErrors "Abort !!"
 // @Router /file/upload [post]
 func Upload(w http.ResponseWriter, r *http.Request) {
-	//write your code
-	_ = Errors{}
+    // write your code
+    _ = Errors{}
 }

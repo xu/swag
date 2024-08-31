@@ -1,10 +1,10 @@
 package api
 
 import (
-	"net/http"
+    "net/http"
 
-	"github.com/swaggo/swag/testdata/generics_arrays/types"
-	"github.com/swaggo/swag/testdata/generics_arrays/web"
+    "github.com/xu/swag/testdata/generics_arrays/types"
+    "github.com/xu/swag/testdata/generics_arrays/web"
 )
 
 // @Summary List Posts
@@ -16,7 +16,7 @@ import (
 // @Success 222 {object} web.GenericListResponseMulti[types.Post, types.Post]
 // @Router /posts [get]
 func GetPosts(w http.ResponseWriter, r *http.Request) {
-	_ = web.GenericListResponseMulti[types.Post, types.Post]{}
+    _ = web.GenericListResponseMulti[types.Post, types.Post]{}
 }
 
 // @Summary Add new pets to the store
@@ -28,8 +28,8 @@ func GetPosts(w http.ResponseWriter, r *http.Request) {
 // @Success 222 {object} web.GenericListResponseMulti[types.Post, types.Post]
 // @Router /posts-multi [get]
 func GetPostMulti(w http.ResponseWriter, r *http.Request) {
-	//write your code
-	_ = web.GenericListResponseMulti[types.Post, types.Post]{}
+    // write your code
+    _ = web.GenericListResponseMulti[types.Post, types.Post]{}
 }
 
 // @Summary Add new pets to the store
@@ -41,6 +41,6 @@ func GetPostMulti(w http.ResponseWriter, r *http.Request) {
 // @Success 222 {object} web.GenericListResponseMulti[types.Post, []types.Post]
 // @Router /posts-multis [get]
 func GetPostArray(w http.ResponseWriter, r *http.Request) {
-	//write your code
-	_ = web.GenericListResponseMulti[types.Post, []types.Post]{}
+    // write your code
+    _ = web.GenericListResponseMulti[types.Post, []types.Post]{}
 }

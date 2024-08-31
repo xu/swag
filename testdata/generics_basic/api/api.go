@@ -1,28 +1,28 @@
 package api
 
 import (
-	"net/http"
+    "net/http"
 
-	"github.com/swaggo/swag/testdata/generics_basic/types"
-	"github.com/swaggo/swag/testdata/generics_basic/web"
+    "github.com/xu/swag/testdata/generics_basic/types"
+    "github.com/xu/swag/testdata/generics_basic/web"
 )
 
 type Response[T any, X any] struct {
-	Data T
-	Meta X
+    Data T
+    Meta X
 
-	Status string
+    Status string
 }
 
 type Response2[T, X any, Y any] struct {
-	Data T
-	Meta X
+    Data T
+    Meta X
 
-	Status Y
+    Status Y
 }
 
 type StringStruct struct {
-	Data string
+    Data string
 }
 
 type Foo = web.GenericResponseMulti[types.Post, types.Post]
@@ -45,8 +45,8 @@ type Foo = web.GenericResponseMulti[types.Post, types.Post]
 // @Failure 404 {object} web.APIError "Can not find ID"
 // @Router /posts/ [post]
 func GetPost(w http.ResponseWriter, r *http.Request) {
-	//write your code
-	_ = web.GenericResponse[types.Post]{}
+    // write your code
+    _ = web.GenericResponse[types.Post]{}
 }
 
 // @Summary Add new pets to the store
@@ -61,8 +61,8 @@ func GetPost(w http.ResponseWriter, r *http.Request) {
 // @Success 222 {object} web.GenericResponseMulti[types.Post, types.Post]
 // @Router /posts-multi/ [post]
 func GetPostMulti(w http.ResponseWriter, r *http.Request) {
-	//write your code
-	_ = web.GenericResponse[types.Post]{}
+    // write your code
+    _ = web.GenericResponse[types.Post]{}
 }
 
 // @Summary Add new pets to the store
@@ -75,6 +75,6 @@ func GetPostMulti(w http.ResponseWriter, r *http.Request) {
 // @Success 222 {object} web.GenericResponseMulti[[]types.Post, [][]types.Post]
 // @Router /posts-multis/ [post]
 func GetPostArray(w http.ResponseWriter, r *http.Request) {
-	//write your code
-	_ = web.GenericResponse[types.Post]{}
+    // write your code
+    _ = web.GenericResponse[types.Post]{}
 }

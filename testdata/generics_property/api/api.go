@@ -1,33 +1,34 @@
 package api
 
 import (
-	"github.com/swaggo/swag/testdata/generics_property/types"
-	"github.com/swaggo/swag/testdata/generics_property/web"
-	"net/http"
+    "net/http"
+
+    "github.com/xu/swag/testdata/generics_property/types"
+    "github.com/xu/swag/testdata/generics_property/web"
 )
 
 type NestedResponse struct {
-	web.GenericResponse[[]string, *uint8]
-	Post types.Field[[]types.Post]
+    web.GenericResponse[[]string, *uint8]
+    Post types.Field[[]types.Post]
 }
 
 type Audience[T any] []T
 
 type CreateMovie struct {
-	Name           string
-	MainActor      types.Field[Person]
-	SupportingCast types.Field[[]Person]
-	Directors      types.Field[*[]Person]
-	CameraPeople   types.Field[[]*Person]
-	Producer       types.Field[*Person]
-	Audience       Audience[Person]
-	AudienceNames  Audience[string]
-	Detail1        types.Field[types.Field[Person]]
-	Detail2        types.Field[types.Field[string]]
+    Name           string
+    MainActor      types.Field[Person]
+    SupportingCast types.Field[[]Person]
+    Directors      types.Field[*[]Person]
+    CameraPeople   types.Field[[]*Person]
+    Producer       types.Field[*Person]
+    Audience       Audience[Person]
+    AudienceNames  Audience[string]
+    Detail1        types.Field[types.Field[Person]]
+    Detail2        types.Field[types.Field[string]]
 }
 
 type Person struct {
-	Name string
+    Name string
 }
 
 // @Summary List Posts

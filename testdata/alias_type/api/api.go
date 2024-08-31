@@ -1,11 +1,11 @@
 package api
 
 import (
-	"log"
-	"net/http"
-	"time"
+    "log"
+    "net/http"
+    "time"
 
-	"github.com/swaggo/swag/testdata/alias_type/data"
+    "github.com/xu/swag/testdata/alias_type/data"
 )
 
 /*// @Summary Get time as string
@@ -42,12 +42,12 @@ func GetTimeAsTimeAlias(w http.ResponseWriter, r *http.Request) {
 // @Success 200 {object} data.TimeContainer	"ok"
 // @Router /testapi/time-as-time-container [get]
 func GetTimeAsTimeContainer(w http.ResponseWriter, r *http.Request) {
-	now := time.Now()
-	var foo = data.TimeContainer{
-		Name:      "test",
-		Timestamp: now,
-		//CreatedAt: &now,
-	}
-	log.Println(foo)
-	//write your code
+    now := time.Now()
+    var foo = data.TimeContainer{
+        Name:      "test",
+        Timestamp: now,
+        // CreatedAt: &now,
+    }
+    log.Println(foo)
+    // write your code
 }

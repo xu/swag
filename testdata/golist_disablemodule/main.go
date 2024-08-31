@@ -1,10 +1,10 @@
 package main
 
 import (
-	"net/http"
+    "net/http"
 
-	"github.com/swaggo/swag/example/basic/api"
-	internalapi "github.com/swaggo/swag/testdata/golist_disablemodule/api"
+    "github.com/xu/swag/example/basic/api"
+    internalapi "github.com/xu/swag/testdata/golist_disablemodule/api"
 )
 
 // @title Swagger Example API
@@ -26,9 +26,9 @@ import (
 // @host petstore.swagger.io
 // @BasePath /v2
 func main() {
-	internalapi.PrintInt(0, 1)
-	http.HandleFunc("/testapi/get-string-by-int/", api.GetStringByInt)
-	http.HandleFunc("/testapi/get-struct-array-by-string/", api.GetStructArrayByString)
-	http.HandleFunc("/testapi/upload", api.Upload)
-	http.ListenAndServe(":8080", nil)
+    internalapi.PrintInt(0, 1)
+    http.HandleFunc("/testapi/get-string-by-int/", api.GetStringByInt)
+    http.HandleFunc("/testapi/get-struct-array-by-string/", api.GetStructArrayByString)
+    http.HandleFunc("/testapi/upload", api.Upload)
+    http.ListenAndServe(":8080", nil)
 }

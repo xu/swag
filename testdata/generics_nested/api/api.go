@@ -1,10 +1,10 @@
 package api
 
 import (
-	"net/http"
+    "net/http"
 
-	"github.com/swaggo/swag/testdata/generics_nested/types"
-	"github.com/swaggo/swag/testdata/generics_nested/web"
+    "github.com/xu/swag/testdata/generics_nested/types"
+    "github.com/xu/swag/testdata/generics_nested/web"
 )
 
 // @Summary List Posts
@@ -19,7 +19,7 @@ import (
 // @Success 222 {object} web.GenericNestedResponseMulti[web.GenericInnerType[types.Post], types.Post]
 // @Router /posts [get]
 func GetPosts(w http.ResponseWriter, r *http.Request) {
-	_ = web.GenericNestedResponse[types.Post]{}
+    _ = web.GenericNestedResponse[types.Post]{}
 }
 
 // @Summary List Posts
@@ -36,7 +36,7 @@ func GetPosts(w http.ResponseWriter, r *http.Request) {
 // @Success 222 {object} web.GenericNestedResponseMulti[web.GenericInnerType[[]types.Post], []types.Post]
 // @Router /posts-multis/ [get]
 func GetPostArray(w http.ResponseWriter, r *http.Request) {
-	_ = web.GenericNestedResponse[types.Post]{}
+    _ = web.GenericNestedResponse[types.Post]{}
 }
 
 // @Summary List Posts

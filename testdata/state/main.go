@@ -1,9 +1,9 @@
 package main
 
 import (
-	"net/http"
+    "net/http"
 
-	"github.com/swaggo/swag/testdata/state/api"
+    "github.com/xu/swag/testdata/state/api"
 )
 
 // @title Swagger Example API
@@ -22,17 +22,17 @@ import (
 // @hostState user petstore-user.swagger.io
 // @BasePath /v3
 func main() {
-	state := "admin" // "admin" or "user"
-	switch state {
-	case "admin":
-		http.HandleFunc("/admin/testapi/get-string-by-int/", api.GetStringByInt)
-		http.HandleFunc("/admin/testapi/get-struct-array-by-string/", api.GetStructArrayByString)
-		http.HandleFunc("/admin/testapi/upload", api.Upload)
-		http.ListenAndServe(":8080", nil)
-	case "user":
-		http.HandleFunc("/testapi/get-string-by-int/", api.GetStringByIntUser)
-		http.HandleFunc("/testapi/get-struct-array-by-string/", api.GetStructArrayByStringUser)
-		http.HandleFunc("/testapi/upload", api.UploadUser)
-		http.ListenAndServe(":8080", nil)
-	}
+    state := "admin" // "admin" or "user"
+    switch state {
+    case "admin":
+        http.HandleFunc("/admin/testapi/get-string-by-int/", api.GetStringByInt)
+        http.HandleFunc("/admin/testapi/get-struct-array-by-string/", api.GetStructArrayByString)
+        http.HandleFunc("/admin/testapi/upload", api.Upload)
+        http.ListenAndServe(":8080", nil)
+    case "user":
+        http.HandleFunc("/testapi/get-string-by-int/", api.GetStringByIntUser)
+        http.HandleFunc("/testapi/get-struct-array-by-string/", api.GetStructArrayByStringUser)
+        http.HandleFunc("/testapi/upload", api.UploadUser)
+        http.ListenAndServe(":8080", nil)
+    }
 }

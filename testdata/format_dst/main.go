@@ -1,9 +1,9 @@
 package main
 
 import (
-	"net/http"
+    "net/http"
 
-	"github.com/swaggo/swag/testdata/simple/api"
+    "github.com/xu/swag/testdata/simple/api"
 )
 
 // @title           Swagger Example API
@@ -48,8 +48,8 @@ import (
 // @authorizationurl                       https://example.com/oauth/authorize
 // @scope.admin                            Grants read and write access to administrative information
 func main() {
-	http.HandleFunc("/testapi/get-string-by-int/", api.GetStringByInt)
-	http.HandleFunc("/testapi/get-struct-array-by-string/", api.GetStructArrayByString)
-	http.HandleFunc("/testapi/upload", api.Upload)
-	http.ListenAndServe(":8080", nil)
+    http.HandleFunc("/testapi/get-string-by-int/", api.GetStringByInt)
+    http.HandleFunc("/testapi/get-struct-array-by-string/", api.GetStructArrayByString)
+    http.HandleFunc("/testapi/upload", api.Upload)
+    http.ListenAndServe(":8080", nil)
 }
